@@ -29,9 +29,9 @@ for time in data["list"]:
         will_rain=True
 if will_rain:
     message = client.messages.create(
-    from_='whatsapp:+14155238886',
+    from_=f'whatsapp:{os.environ.get("TWILIO_PHONE")}',
     body="It's going to rain, bring an umbrella!",
-    to='whatsapp:+971547524880'
+    to=f'whatsapp:{os.environ.get("MY_PHONE")}'
 )
 
 print(message.status)
