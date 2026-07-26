@@ -23,23 +23,46 @@ jobs:
 
       - name: Check secrets are configured
         env:
-          MY_EMAIL: ${{ secrets.MY_EMAIL }}
-          MY_PASSWORD: ${{ secrets.MY_PASSWORD }}
+          MY_PHONE: ${{ secrets.MY_PHONE }}
+          TWILIO_PHONE: ${{ secrets.TWILIO_PHONE }}
+          API_KEY_WEATHER: ${{ secrets.API_KEY_WEATHER }}
+          ACC_SID: ${{ secrets.ACC_SID }}
+          AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
+
         run: |
-          if [ -z "$MY_EMAIL" ]; then
-            echo "MY_EMAIL secret is not set!"
-            echo "Go to Settings > Secrets > Actions and add it."
+          if [ -z "$MY_PHONE" ]; then
+            echo "MY_PHONE secret is not set!"
             exit 1
           else
-            echo "MY_EMAIL is configured"
+            echo "MY_PHONE is configured"
           fi
 
-          if [ -z "$MY_PASSWORD" ]; then
-            echo "MY_PASSWORD secret is not set!"
-            echo "Go to Settings > Secrets > Actions and add it."
+          if [ -z "$TWILIO_PHONE" ]; then
+            echo "TWILIO_PHONE secret is not set!"
             exit 1
           else
-            echo "MY_PASSWORD is configured"
+            echo "TWILIO_PHONE is configured"
+          fi
+
+          if [ -z "$API_KEY_WEATHER" ]; then
+            echo "API_KEY_WEATHER secret is not set!"
+            exit 1
+          else
+            echo "API_KEY_WEATHER is configured"
+          fi
+
+          if [ -z "$ACC_SID" ]; then
+            echo "ACC_SID secret is not set!"
+            exit 1
+          else
+            echo "ACC_SID is configured"
+          fi
+
+          if [ -z "$AUTH_TOKEN" ]; then
+            echo "AUTH_TOKEN secret is not set!"
+            exit 1
+          else
+            echo "AUTH_TOKEN is configured"
           fi
 
           echo ""
