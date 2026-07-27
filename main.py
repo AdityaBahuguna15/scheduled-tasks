@@ -2,7 +2,6 @@ import requests
 from twilio.rest import Client
 import os
 
-# API_KEY = "11a90111d877d664481363b739896657"
 API_KEY = os.environ.get("API_KEY_WEATHER")
 MY_LAT = 41.902782
 MY_LONG = 12.496365
