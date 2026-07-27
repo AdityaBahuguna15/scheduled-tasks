@@ -32,6 +32,7 @@ if will_rain:
     from_=f'whatsapp:{os.environ.get("TWILIO_PHONE")}',
     body="It's going to rain, bring an umbrella!",
     to=f'whatsapp:{os.environ.get("MY_PHONE")}'
-)
-
-print(message.status)
+    )
+    print(message.status)
+else:
+    print("No rain today.")
